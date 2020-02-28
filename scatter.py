@@ -36,6 +36,7 @@ def main(init):
 for i in range(20):
     p = main(i*0.2)
     plt.plot(p[0] , p[1], c = 'c')
+plt.title('Geiger–Marsden experiment',fontproperties='SimHei',fontsize=18,color='g')
 plt.show()
 
         

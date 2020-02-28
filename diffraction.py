@@ -10,7 +10,6 @@ N = 4
 
 
 
-
 def I(x):
     global u,v
     u = np.pi * a * np.sin(x)  / lab
@@ -25,6 +24,9 @@ def I(x):
 plt.plot(th,I(th),c = 'b')
 plt.plot(th,v,c = 'y')
 plt.plot(th,u,c = 'c')
+
+
+plt.legend(['Double-slit','Single-slit','Multiple-slit'],loc = 'upper right')
 plt.title('Multiple-slit diffraction',fontproperties='SimHei',fontsize=18,color='green')
 plt.show()
 
