@@ -2,20 +2,30 @@ import numpy as np
 import matplotlib.pyplot as plt 
 #import seaborn as sns
 
+def main(N):
+    array = np.random.rand(N,1000)
+    xArray = array.mean(axis=0)
+    std = xArray.std()
+    return std
 
+stdArray = np.zeros(50)
+for i in range(50):
+    stdArray[i] = main(i)
+
+plt.plot(range(1,51),stdArray)
+plt.title("Change Of N From 1 to 50 And Its Standard Deviation")
+plt.show()
 #array = np.random.rand(10,1000)
 #np.save('array',array)
-array = np.load('array.npy')
-xArray = np.zeros(1000)
-for i in range(10):
-    xArray = xArray+array[i]
-xArray = xArray/10
-mean = xArray.mean()
-std = xArray.std()
+#array = np.load('array.npy')
+#xArray = np.zeros(1000)
+#xArray = xArray.mean(axis = 0)
+#mean = xArray.mean()
+#std = xArray.std()
 #random.rand => give a sample random number in [0,1]
 #np.random.randint => only integer
 #xArraySingleLine = array.ravel()
-
+"""
 xArray[abs(xArray-mean) > 3*std] = 2
 
 fArray = np.zeros(10)
@@ -40,9 +50,7 @@ for i in range(1000):
 
 #print("The average of x is" , mean)
 #print("The Std of x is" , std)
-"""
 plt.plot(range(1000),xArray,linewidth=0.5)
 plt.title("1000 Times Of Simple Random Numbers' Average(N = 10)")
 plt.show()
 """
-#print(array[0])
