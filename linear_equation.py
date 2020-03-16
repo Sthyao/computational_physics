@@ -37,12 +37,13 @@ def gs_line(a,b):
     res[size-1] = b[size - 1] / temparray[size-1][size-1]
     for i in range(size-2,-1,-1):
         res[i] = (b[i] - np.dot(temparray[i][i+1:], res[i+1:])) / temparray[i][i] 
-    print(res)
+    print("Answer of Gaussian Elimination:\n",res)
 
 def sd(a,b):
-    x0 = np.array([1.0,1,1,1])
+    x0 = np.array([0.0,0,0,0])
     x = np.array([0.0,0,0,0])
     flag = 1
+    times = 1
     while flag:
         for i in range(4):
             temp = 0 
@@ -52,8 +53,8 @@ def sd(a,b):
                     temp += x0[j] * a[i][j]
             x[i] = (b[i]-temp)/a[i][i]
             x0[i] = x[i].copy()
-            print(x)
-            
+            print("Times:",times,x)
+            times = times + 1
         if max(abs(x-tempx)) < 0.00001:
             
             flag = 0
@@ -62,4 +63,6 @@ def sd(a,b):
     
 
 #gs_line(a,b)
+np.set_printoptions(formatter={'float': '{: 0.5f}'.format})
 sd(a1,b)
+#gs_line(a,b)
