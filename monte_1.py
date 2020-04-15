@@ -33,11 +33,11 @@ def repetition(N):
 
 N = 20
 
-t = np.arange(5000)
+t = np.arange(5000)/10000
 b = repetition(N)
 reference = 10000/2 * (1 - np.exp(-2 * t/10000))
 plt.plot(t,b,linewidth=1.5,c = 'y')
-plt.plot(t,reference, linewidth=1,c = 'r')
-plt.title("N in B With Monte Carlo")
-plt.legend(['Simulation','Theory'],loc = 'upper right')
+#plt.plot(t,reference, linewidth=1,c = 'r')
+plt.title("N in B With Monte Carlo,t in MCS")
+#plt.legend(['Simulation','Theory'],loc = 'upper right')
 plt.show()
